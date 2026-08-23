@@ -73,7 +73,7 @@
     #cf-app .badge{display:inline-block;padding:3px 7px;border-radius:999px;font-size:11px;font-weight:850;margin-right:5px}
     #cf-app .b-bueno{background:#dcfce7;color:#166534}.b-obs{background:#fef3c7;color:#92400e}.b-def{background:#fee2e2;color:#991b1b}.b-na{background:#e5e7eb;color:#374151}
     @media print{#cf-app .top,#cf-app .install-banner,#cf-app .appnav,#cf-app #historyList,#cf-app .footer-actions,#cf-app .note{display:none!important}#cf-app{background:#fff;color:#111;padding:0}#cf-app .screen{display:none!important}#cf-app #screen-history{display:block!important}#cf-app .panel{border:0;padding:0}#cf-app #historyPreview{display:block!important;border:0;margin:0;padding:0}#cf-app .preview-row{break-inside:avoid}#cf-app .thumb{width:120px;height:90px}}
-    @media(max-width:620px){#cf-app{padding:12px}#cf-app .grid{grid-template-columns:1fr}#cf-app .status{grid-template-columns:repeat(2,minmax(0,1fr))}#cf-app .summary{grid-template-columns:repeat(2,minmax(0,1fr))}#cf-app .decision{grid-template-columns:1fr}#cf-app .item-actions{grid-template-columns:1fr}#cf-app .photo-label{width:100%}}
+    @media(max-width:620px){#cf-app{padding:10px;font-size:16px}#cf-app .top{align-items:flex-start}#cf-app .brand{align-items:flex-start}#cf-app .logo{width:46px;height:46px;border-radius:13px;font-size:17px}#cf-app h1{font-size:20px}#cf-app .pill{padding:7px 10px}#cf-app .install-banner{align-items:flex-start;flex-direction:column}#cf-app .install-banner button{width:100%}#cf-app .appnav{grid-template-columns:1fr;gap:7px}#cf-app .appnav button{min-height:50px;font-size:15px}#cf-app .panel{padding:14px;border-radius:16px}#cf-app .grid{grid-template-columns:1fr}#cf-app input[type=text],#cf-app input[type=number],#cf-app input[type=date],#cf-app textarea{font-size:17px;padding:13px 14px}#cf-app .section-head{font-size:16px;padding:16px 14px;min-height:58px}#cf-app .section-body{padding:0 10px 12px}#cf-app .item{padding:16px 2px}#cf-app .item-title{font-size:16px;line-height:1.35}#cf-app .status{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#cf-app .status button{min-height:48px;font-size:14px;padding:10px 8px}#cf-app .summary{grid-template-columns:repeat(2,minmax(0,1fr))}#cf-app .decision{grid-template-columns:1fr}#cf-app .decision button{min-height:52px;font-size:14px}#cf-app .item-actions{grid-template-columns:1fr}#cf-app .photo-label{width:100%;min-height:48px;font-size:14px}#cf-app .footer-actions{display:grid;grid-template-columns:1fr}#cf-app .primary,#cf-app .secondary{width:100%;min-height:50px;font-size:15px}#cf-app .preview-row{font-size:14px;line-height:1.45}}
   </style>
 
   <div class="top">
@@ -159,6 +159,9 @@
 
   <script>
   (()=>{
+    let viewportMeta=document.querySelector('meta[name="viewport"]');
+    if(!viewportMeta){viewportMeta=document.createElement('meta');viewportMeta.name='viewport';document.head.appendChild(viewportMeta)}
+    viewportMeta.content='width=device-width,initial-scale=1,viewport-fit=cover';
     const root=document.getElementById('cf-app'); if(root.dataset.ready) return; root.dataset.ready='1';
     const data=[
       ['📄','DOCUMENTACIÓN LEGAL',['Autofact','CAV','Padrón Inscripción (Nombre Vendedor)','Rev. Técnica / Homologado','P. Circulación al día','Seguro Obligatorio (SOAP)','Hist. Mantenciones (Libreta)','Verificación VIN','Verificación Motor']],
